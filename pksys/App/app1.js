@@ -1,7 +1,7 @@
 
 var spot;
 var size;
-function initialize(num)
+exports.initialize = function (num)
 {
 	size = num;
 	spot = new Array(num);
@@ -11,9 +11,9 @@ function initialize(num)
 	}	
 }
 
-function park(name) {
+exports.park= function (name) {
 		
-    //var name = document.getElementById('value').value;        
+    //var name = document.getElementById('park').value;        
     var place = 0;
     while(place <size && spot[place] != null) {place++;}
 
@@ -27,8 +27,8 @@ function park(name) {
 
 }
 
-function unpark(name){
-	var i=0
+exports.unpark = function (name){
+	var i=0;
 	var place = 0;
 	while(i<size && spot[i]!=name){
 		i++;
