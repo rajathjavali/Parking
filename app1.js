@@ -39,5 +39,4 @@ function unpark(name){
 	else
 		return 0;
 
-	}
 }
