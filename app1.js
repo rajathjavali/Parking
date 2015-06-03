@@ -19,7 +19,8 @@ function park(name) {
 
     if (place<size) {
         spot[place] = name; 
-        return place;
+        //return place;
+        return 1;
     }
     else
     	return -1;
@@ -39,5 +40,4 @@ function unpark(name){
 	else
 		return 0;
 
-	}
 }
