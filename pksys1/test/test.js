@@ -1,4 +1,4 @@
-/*var expect = require("chai").expect; // node.js core module
+var expect = require("chai").expect; // node.js core module
 var c = require('../App/app1.js');
 
 
@@ -34,27 +34,20 @@ it('unpark unSuccessful', function(){
     })
 
   //})
-});*/
+});
 
 
 
-
-var expect = require("chai").expect;
+/*var expect = require("chai").expect;
 var parkingManager = require('../App/parkingLot1.js');
 
-describe('Parking System',function(){
+describe('Parking',function(){
   var parkingLot1 = parkingManager(3);
-  it('Successfull System', function(){
-      
-      
-      var car1 = parkingLot1.park("car1");
-      if(car1 == 1)
-        console.log("car1 parking Successfull");
-      else
-        console.log("car1 parking UnSuccessfull");
-        
-      expect(parkingLot1.park("car2")).to.equal(1); 
-      expect(parkingLot1.park("car3")).to.equal(1); 
-      expect(parkingLot1.park("car4")).to.equal(-1); 
+  it('Successful', function(){
+      //c.initialize(100);
+      console.log("value"+parkingLot1);
+      var abc = parkingLot1.park("abc");
+      console.log("status"+abc);
+        expect(abc).to.equal(1); 
     })
-});
+});*/

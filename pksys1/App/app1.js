@@ -1,4 +1,3 @@
-
 var spot;
 var size;
 exports.initialize = function (num)
@@ -12,22 +11,20 @@ exports.initialize = function (num)
 }
 
 exports.park= function (name) {
-		
-    //var name = document.getElementById('park').value;        
     var place = 0;
     while(place <size && spot[place] != null) {place++;}
 
     if (place<size) {
         spot[place] = name; 
-        //return place;
         return 1;
     }
-    else
+    else {
     	return -1;
+    }
 
 }
 
-exports.unpark = function (name){
+exports.unpark = function(name){
 	var i=0;
 	var place = 0;
 	while(i<size && spot[i]!=name){
@@ -37,7 +34,8 @@ exports.unpark = function (name){
 		spot[i] = null;
 		return 1;
 	}
-	else
+	else{
 		return 0;
-
+	}
+	
 }
