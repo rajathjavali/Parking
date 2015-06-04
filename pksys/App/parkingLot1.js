@@ -8,7 +8,7 @@ module.exports = function (num){
 	var fail = -1;
 	//var spaceAvailable = true;
 	var park = function (name) {
-	  
+
 	    var place = 0 , flag = 0;
 	    while(place < size && spot[place] != null)//&& spaceAvailable) 
 		{
@@ -20,16 +20,50 @@ module.exports = function (num){
 	    	flag=1;
 		}
 	    if(occupied == size && flag == success)
-	    	return full;
+	    	return "full";
 	    else if(occupied == size && flag != success)
-	    	return fail;
+	    	return "no space";
 	    else if(flag == success)
-	    	return success;
+	    	return "success";
 		else
-			return fail;
+			return "no space";
+		
 	    //var status = isFull();
 
 	};
+
+	var parkAssistant = function (name,num){
+		var checkSpot = isEmpty(num);
+		if(num >= size)
+			return "unavilable slot";
+		
+		if(checkSpot){
+			spot[num] = name;
+			occupied ++;
+			if(occupied == size)
+				return "full";
+			else
+				return "success";
+		}
+		
+		return "occupied";  
+	}
+
+	var findCar = function (name){
+		var carFinder=0;
+		while(carFinder < size && spot[carFinder]!=name){
+			carFinder ++;
+		}
+		return carFinder;
+	}
+	
+	var isEmpty = function (num) {
+		if(spot[num] != null){
+			return false;
+		}
+		else
+			return true;
+	}
 
 	var isFull = function (){
 		if(occupied < size){
@@ -52,23 +86,24 @@ module.exports = function (num){
 
 	var unpark= function(name){
 		  
-		var carFinder=0;
+		var carFinder = findCar(name);
 		var place = 0;
-		while(carFinder < size && spot[carFinder]!=name){
-			carFinder ++;
-		}
+
 		if(carFinder < size){		
 			spot[carFinder] = null;
 			occupied --;
-			return success;
+			return "success";
 		}
 		else{
-			return fail;
+			return "fail";
 		}
 		
 	};
 
 	return {
+		findCar: findCar,
+		parkAssistant: parkAssistant,
+		isEmpty: isEmpty,
 		isFull: isFull,
 		park: park,
 		unpark:unpark
