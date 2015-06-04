@@ -14,9 +14,9 @@ describe('Parking System',function(){
     }
     else
       console.log("~~~~~~~~~~~~Parking Available~~~~~~~~");
-
-/* ######################  CAR PARKING #######################*/    
     var car;
+
+/* ######################  CAR PARKING #######################*/       
     for(car_no = 0; car_no < 5 ; car_no ++ ){
       car = parkingLot1.park("car"+car_no);
       console.log("\n#car"+car_no+" parking");
@@ -42,6 +42,26 @@ describe('Parking System',function(){
      
     else
       console.log("car"+car_no+" not found");
+
+
+/* ######################  CAR PARKING #######################*/        
+    for(car_no = 5; car_no < 10; car_no ++ ){
+      car = parkingLot1.park("car"+car_no);
+      console.log("\n#car"+car_no+" parking");
+      //console.log("car location"+car)
+      if(car == 1 )
+        console.log("car"+car_no+" parking Successfull");
+      else if(car == 0){
+        console.log("car"+car_no+" parking Successfull");
+        console.log("\n~~~~~~~~~~~~Parking Lot Full~~~~~~~~~");
+      }
+      else
+        console.log("car"+car_no+" parking UnSuccessfull");
+    }
+
+
+
+
   })
 
 });
