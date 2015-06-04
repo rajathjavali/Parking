@@ -54,7 +54,10 @@ module.exports = function (num){
 		while(carFinder < size && spot[carFinder]!=name){
 			carFinder ++;
 		}
-		return carFinder;
+		if(carFinder < size)
+			return carFinder;
+		else
+			return -1;
 	}
 	
 	var isEmpty = function (num) {
@@ -89,7 +92,7 @@ module.exports = function (num){
 		var carFinder = findCar(name);
 		var place = 0;
 
-		if(carFinder < size){		
+		if(carFinder != -1){		
 			spot[carFinder] = null;
 			occupied --;
 			return "success";

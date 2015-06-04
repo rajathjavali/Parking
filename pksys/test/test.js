@@ -66,6 +66,7 @@ describe('Parking System',function(){
   })
   */
   beforeEach(function(){
+    debugger;
     parkingLot1 = parkingManager(3);
   })
 
